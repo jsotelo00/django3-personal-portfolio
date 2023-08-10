@@ -1,0 +1,50 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="{% static "portfolio/Logo.png" %}">
+    <title>Julio Sotelo</title>
+  </head>
+  <body>
+
+    <nav id="topNav" class="navbar navbar-expand-md navbar-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'home' %}">
+          <img src="{% static "portfolio/Logo.png" %}" width="30" height="30" class="d-inline-block align-top" alt="Julio Logo">
+          <span>Julio Sotelo</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{% static "portfolio/itinerario.pdf" %}">Itinerario SF</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://www.google.com" target="_blank">Google</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://facebook.com" target="_blank">facebook</a>
+            </li>
+            <li>
+              <a role="button" href="{% url 'blog:all_blogs' %}" class="btn btn-primary">Blog</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    <div class="container">
+      {% block content %}{% endblock %}
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  </body>
+</html>
